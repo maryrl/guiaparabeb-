@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Guia Perfeito para o Bebê Dormir</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .container {
+            min-height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-star {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-star:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-star:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+        .floating-star:nth-child(3) { top: 60%; left: 5%; animation-delay: 4s; }
+        .floating-star:nth-child(4) { bottom: 20%; right: 10%; animation-delay: 1s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            animation: slideUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #4a5568;
+            text-align: center;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ebook-preview {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .ebook-cover {
+            width: 250px;
+            height: 350px;
+            background: linear-gradient(145deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transform: perspective(1000px) rotateY(-15deg);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ebook-cover:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.05);
+        }
+
+        .ebook-cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .ebook-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .ebook-title {
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-text {
+            color: #4a5568;
+            font-size: 1rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: 0 15px 35px rgba(238, 90, 36, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .price-container {
+            margin: 2rem 0;
+        }
+
+        .old-price {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.7);
+            text-decoration: line-through;
+            margin-right: 1rem;
+        }
+
+        .new-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff200;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #fff200 0%, #ffed4e 100%);
+            color: #2d3748;
+            font-size: 1.5rem;
+            font-weight: 800;
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(255, 242, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 242, 0, 0.4);
+            background: linear-gradient(135deg, #ffed4e 0%, #fff200 100%);
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px);
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            color: #4a5568;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #2d3748;
+            font-size: 1.1rem;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .guarantee {
+            background: rgba(76, 175, 80, 0.1);
+            border: 2px solid #4caf50;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .guarantee-title {
+            color: #2e7d32;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-text {
+            color: #388e3c;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .ebook-preview {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .ebook-cover {
+                width: 200px;
+                height: 280px;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .new-price {
+                font-size: 2.5rem;
+            }
+            
+            .cta-button {
+                font-size: 1.2rem;
+                padding: 1.2rem 2rem;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="container">
+   <div class="floating-elements">
+    <div class="floating-star">
+     ⭐
+    </div>
+    <div class="floating-star">
+     🌙
+    </div>
+    <div class="floating-star">
+     💤
+    </div>
+    <div class="floating-star">
+     👶
+    </div>
+   </div>
+   <div class="content">
+    <header class="header">
+     <div class="logo">
+      KIWIFI
+     </div>
+    </header>
+    <section class="hero-section">
+     <h1 class="hero-title" id="main-title">Guia Perfeito para o Bebê Dormir</h1>
+     <p class="hero-subtitle" id="subtitle">Transforme as noites da sua família com técnicas comprovadas para fazer seu bebê dormir tranquilamente</p>
+     <div class="ebook-preview">
+      <div class="ebook-cover">
+       <div class="ebook-icon">
+        📖
+       </div>
+       <div class="ebook-title">
+        Guia Completo<br>
+        do Sono
+       </div>
+      </div>
+      <div class="benefits-grid">
+       <div class="benefit-card"><span class="benefit-icon">😴</span>
+        <h3 class="benefit-title" id="benefit-1">Noites Tranquilas</h3>
+        <p class="benefit-text">Aprenda técnicas eficazes para estabelecer uma rotina de sono saudável</p>
+       </div>
+       <div class="benefit-card"><span class="benefit-icon">👨‍👩‍👶</span>
+        <h3 class="benefit-title" id="benefit-2">Família Descansada</h3>
+        <p class="benefit-text">Métodos gentis que respeitam o desenvolvimento natural do bebê</p>
+       </div>
+       <div class="benefit-card"><span class="benefit-icon">⏰</span>
+        <h3 class="benefit-title" id="benefit-3">Resultados Rápidos</h3>
+        <p class="benefit-text">Veja mudanças positivas já nas primeiras semanas de aplicação</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="testimonial">
+     <div class="stars">
+      ⭐⭐⭐⭐⭐
+     </div>
+     <p class="testimonial-text" id="testimonial-text">"Em apenas 2 semanas minha filha começou a dormir a noite toda! Este guia mudou nossa vida completamente. Recomendo para todos os pais!"</p>
+     <p class="testimonial-author" id="testimonial-author">- Maria Silva, mãe da Sofia</p>
+    </section>
+    <section class="cta-section">
+     <h2 class="cta-title">Oferta Especial!</h2>
+     <div class="price-container"><span class="old-price">R$ 97,00</span> <span class="new-price">R$ 47,00</span>
+     </div>
+     <div class="guarantee">
+      <h3 class="guarantee-title">🛡️ Garantia de 30 dias</h3>
+      <p class="guarantee-text">Se não ficar satisfeito, devolvemos 100% do seu dinheiro</p>
+     </div><button class="cta-button" id="cta-button" onclick="handlePurchase()">Comprar Agora</button>
+    </section>
+   </div>
+  </div>
+<script>
+    const defaultConfig = {
+        main_title: "Guia Perfeito para o Bebê Dormir",
+        subtitle: "Transforme as noites da sua família com técnicas comprovadas para fazer seu bebê dormir tranquilamente",
+        cta_button: "Comprar Agora",
+        benefit_1: "Noites Tranquilas",
+        benefit_2: "Família Descansada",
+        benefit_3: "Resultados Rápidos",
+        testimonial_text: "Em apenas 2 semanas minha filha começou a dormir a noite toda! Este guia mudou nossa vida completamente. Recomendo para todos os pais!",
+        testimonial_author: "- Maria Silva, mãe da Sofia",
+        // >>>>> COLOQUE SEU LINK DE PAGAMENTO SEGURO AQUI <<<<<
+        payment_link: "https://seulinkdepagamento.com/checkout" 
+    };
+
+    async function onConfigChange(config) {
+        const mainTitle = config.main_title || defaultConfig.main_title;
+        const subtitle = config.subtitle || defaultConfig.subtitle;
+        const ctaButton = config.cta_button || defaultConfig.cta_button;
+        const benefit1 = config.benefit_1 || defaultConfig.benefit_1;
+        const benefit2 = config.benefit_2 || defaultConfig.benefit_2;
+        const benefit3 = config.benefit_3 || defaultConfig.benefit_3;
+        const testimonialText = config.testimonial_text || defaultConfig.testimonial_text;
+        const testimonialAuthor = config.testimonial_author || defaultConfig.testimonial_author;
+
+        document.getElementById('main-title').textContent = mainTitle;
+        document.getElementById('subtitle').textContent = subtitle;
+        document.getElementById('cta-button').textContent = ctaButton;
+        document.getElementById('benefit-1').textContent = benefit1;
+        document.getElementById('benefit-2').textContent = benefit2;
+        document.getElementById('benefit-3').textContent = benefit3;
+        document.getElementById('testimonial-text').textContent = testimonialText;
+        document.getElementById('testimonial-author').textContent = testimonialAuthor;
+    }
+
+    function mapToCapabilities(config) {
+        return {
+            recolorables: [],
+            borderables: [],
+            fontEditable: undefined,
+            fontSizeable: undefined
+        };
+    }
+
+    function mapToEditPanelValues(config) {
+        return new Map([
+            ["main_title", config.main_title || defaultConfig.main_title],
+            ["subtitle", config.subtitle || defaultConfig.subtitle],
+            ["cta_button", config.cta_button || defaultConfig.cta_button],
+            ["benefit_1", config.benefit_1 || defaultConfig.benefit_1],
+            ["benefit_2", config.benefit_2 || defaultConfig.benefit_2],
+            ["benefit_3", config.benefit_3 || defaultConfig.benefit_3],
+            ["testimonial_text", config.testimonial_text || defaultConfig.testimonial_text],
+            ["testimonial_author", config.testimonial_author || defaultConfig.testimonial_author]
+        ]);
+    }
+
+    // >>>>> FUNÇÃO ALTERADA PARA REDIRECIONAR PARA O LINK DE PAGAMENTO <<<<<
+    function handlePurchase() {
+        // Pega o link de pagamento da configuração
+        const paymentLink = window.elementSdk?.config?.payment_link || defaultConfig.payment_link;
+
+        // Verifica se o link existe e redireciona o usuário
+        if (paymentLink) {
+            window.location.href = paymentLink;
+        } else {
+            // Mensagem de erro caso o link não seja encontrado
+            console.error("Link de pagamento não configurado!");
+            alert("Ocorreu um erro ao tentar processar o pagamento.");
+        }
+    }
+
+    // Inicializar SDK
+    if (window.elementSdk) {
+        window.elementSdk.init({
+            defaultConfig,
+            onConfigChange,
+            mapToCapabilities,
+            mapToEditPanelValues
+        });
+    }
+
+    // Adicionar efeitos de scroll suaves
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.benefit-card');
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.2}s`;
+        });
+    });
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9959527fc643dc24',t:'MTc2MTY0Mjg2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
